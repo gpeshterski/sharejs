@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script  src="gibberish-aes.js"></script>
+    <title>Free Online AES Tool - Encrypt / Decrypt Text with AES Online</title>
+</head>
+ 
+<body>
+    <h1>Online AES Encryptor / Decryptor - Free AES Tool</h1>
+    <h2>(JavaScript client-side AES cipher implementation)</h2>
+ 
+    <table>
+        <tr>
+            <td>Text to encrypt:</td>
+            <td><textarea id="text" />Enter the text to be encrypted here...</textarea></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input id="password" value="some password" /></td>
+        </tr>
+        <tr>
+            <td>Encrypted text:</td>
+            <td><textarea id="process1" readonly="readonly"></textarea></td>
+        </tr>
+        <tr>
+            <td>Decrypted text:</td>
+            <td><textarea id="process2" readonly="readonly"></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button id="buttonEncrypt">Encrypt</button>
+            </td>
+            <td colspan="2" align="center">
+                <button id="buttonDecrypt">Decrypt</button>
+            </td>
+			
+        </tr>
+    </table>
+ 
+    <script>
+        $('#buttonEncrypt').click(function() {
+            var text = $('#text').val();
+            var pass = $('#password').val();
+            GibberishAES.size(1024);
+            var encrypted = GibberishAES.enc(text, pass);
+            $('#process1').val(encrypted);
+            var decrypted = GibberishAES.dec(encrypted, pass);
+            $('#process2').val(decrypted);
+        });
+        $('#buttonDecrypt').click(function() {
+            var text = $('#text').val();
+            var pass = $('#password').val();
+            GibberishAES.size(1024);
+            var decrypted = GibberishAES.dec(text, pass);
+            $('#process1').val(decrypted);
+            var encrypted = GibberishAES.enc(decrypted, pass);
+            $('#process2').val(encrypted);
+        });
+		
+    </script>
+</body>
+</html>
