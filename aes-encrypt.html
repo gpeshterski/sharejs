@@ -11,28 +11,26 @@
     <h1>Online AES Encryptor / Decryptor - Free AES Tool</h1>
     <h2>(JavaScript client-side AES cipher implementation)</h2>
  
-    <table>
+    <table style="width: 90%;" border=1 >
         <tr>
-            <td>Text to encrypt:</td>
-            <td><textarea id="text" />Enter the text to be encrypted here...</textarea></td>
+            <td style="width: 10px;">Text to encrypt\decrypt:</td>
+            <td><textarea id="text" style="width: 100%; height: 270px;" />Enter the text to be encrypted here...</textarea></td>
         </tr>
         <tr>
             <td>Password:</td>
-            <td><input id="password" value="some password" /></td>
+            <td><input style="width: 100%;" id="password" value="some password" /></td>
         </tr>
         <tr>
             <td>Encrypted text:</td>
-            <td><textarea id="process1" readonly="readonly"></textarea></td>
+            <td><textarea style="width: 100%;" id="process1" ></textarea></td>
         </tr>
         <tr>
             <td>Decrypted text:</td>
-            <td><textarea id="process2" readonly="readonly"></textarea></td>
+            <td><textarea style="width: 100%" id="process2" ></textarea></td>
         </tr>
         <tr>
             <td colspan="2" align="center">
                 <button id="buttonEncrypt">Encrypt</button>
-            </td>
-            <td colspan="2" align="center">
                 <button id="buttonDecrypt">Decrypt</button>
             </td>
 			
